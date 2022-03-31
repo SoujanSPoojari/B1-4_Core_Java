@@ -1,22 +1,20 @@
 package day3_oops;
 public class cars {
 	String str;
-	int a;
-	cars(String st, int x,int y,int z)
+	cars(String st)
 	{
 		str=st;
-		a=x;
 	}
 	void display()
 	{
-		System.out.println(str+" "+a);
+		System.out.println(str);
 	}
 	public static void main(String[] args) {
 
 		
-		cars c=new cars("This is Audi", 0, 0, 0);
-		cars c1=new cars("This is BMW", 0, 0, 0);
-		cars c2=new cars("This is Benz", 0, 0, 0);
+		cars c=new cars("This is Audi");
+		cars c1=new cars("This is BMW");
+		cars c2=new cars("This is Benz");
 		c.display();
 		c1.display();
 		c2.display();
