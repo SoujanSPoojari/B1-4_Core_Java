@@ -1,7 +1,7 @@
 package com.package5;
 
 public class sbi_assignment {
-	public int balance;
+	private int balance;
 	public sbi_assignment() {
 		// TODO Auto-generated constructor stub
 	}
@@ -9,8 +9,8 @@ public class sbi_assignment {
 	{
 		return balance;
 	}
-	public void setBalance(int fal, int balance)
+	public void setBalance(int bal)
 	{
-		this.balance=balance;
+		balance=bal;
 	}
 }
