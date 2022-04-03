@@ -1,16 +1,20 @@
-package com.looping;
+package com.operator;
 
 import java.util.Scanner;
 
-public class ForLoop {
+public class RelationalOperator {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner s=new Scanner(System.in);
-		int n=s.nextInt();
-		for(int y=1;y<=n;y++)
-		System.out.println("Value of y:" + y);
+		int a=s.nextInt();
+		int b=s.nextInt();
+		boolean res=a>b;
+		System.out.println(res);
 		s.close();
+		
+		
+		
 	}
 
 }
