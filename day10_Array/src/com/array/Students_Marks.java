@@ -4,7 +4,6 @@ public class Students_Marks {
 
 	public String name;
 	public String roll_no;
-	void display()
 	{
 		
 	}
