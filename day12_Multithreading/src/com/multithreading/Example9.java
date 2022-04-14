@@ -1,51 +1,41 @@
 package com.multithreading;
+
 class Example9 {
-	synchronized void printTable(int n)
+	class Main extends Example9{
+	public void run ()
 	{
-		for(int i=1;i<=5;i++)
-		{
-			System.out.println(n*i);
-			try
-			{
-				Thread.sleep(400);
-			}
-			catch(Exception e)
-			{
-				System.out.println(e);
-			}
-		}
+	    for (int i=1;i<=3;i++)
+	    {
+	        System.out.println ("doing task "+i);
+	    }
+	}
+	}
+
+	public class Main1{
+	public final Example9 t1 = null;
+
+	public void main(String args[])throws InterruptedException
+	{
+	    Example9 t1=new Example9 ();
+	    t1.start();
+	    System.out.println("is thread interrupted"+t1.isInterrupted());
+	    t1.interrupt();
+	    System.out.println("is thread interrupted"+t1.isInterrupted());
+}
+}
+
+	public void start() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String isInterrupted() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void interrupt() {
+		// TODO Auto-generated method stub
+		
 	}
 }
-class Thread1 extends Thread
-{
-	Example9 t;
-	Thread1(Example9 t)
-	{
-		this.t=t;
-	}
-	public void run()
-	{
-		t.printTable(5);
-	}
-}
-class Thread2 extends Thread{
-	Example9 t;
-	Thread2(Example9 t){
-		this.t=t;
-	}
-	public void run()
-	{
-		t.printTable(100);
-	}
-}
-	class Main
-	{
-	public static void main(String args[])
-		{
-			Example9 obj=new Example9();
-			Thread1 t1=new Thread1(obj);
-			Thread1 t2=new Thread1(obj);
-			t1.start();
-			t2.start();
-		}
-	}
