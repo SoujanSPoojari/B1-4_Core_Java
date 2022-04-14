@@ -16,7 +16,7 @@ public class Example10 {
                                                  e.printStackTrace ();
                                     }
                       }
-                      class Valueof implements Runnable{
+					class Valueof implements Runnable{
                     	    Thread t;
                     	    Example10 val;
                     	    Valueof (Example10 val)
@@ -29,8 +29,7 @@ public class Example10 {
                     	    {
                     	        val.display();
                     	    }
-                    	class Main{
-                    	    @SuppressWarnings("unused")
+						class Main{
 							public void main(String[] args) {
                     	    	Example10 objl= new Example10();
                     	    	Example10 obj2= new Example10();
