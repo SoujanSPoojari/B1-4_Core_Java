@@ -2,6 +2,7 @@ package com.crude;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,7 +17,18 @@ public class CrudeDB {
 		try
 		{
 			Connection c=DriverManager.getConnection(dbURL,dbUserName,dbPassword);
-			String sql = "select * from Employee";
+			String sql = "delete from Employee user_name=?,password=? where user_id=?";
+			
+			PreparedStatement p=c.prepareStatement(sql);
+			p.setString(1, "101");
+			
+			int rows=p.executeUpdate();
+			if(rows>0)
+			{
+				System.out.print("An Exisiting userupdated successfully");
+			}
+			c.close();
+			/*String sql = "select * from Employee";
 			Statement st=c.createStatement();
 			ResultSet rs=st.executeQuery(sql);
 			
@@ -30,13 +42,13 @@ public class CrudeDB {
 				System.out.println(String.format(res,id, name, pass, email));
 			}
 			c.close();
-		}
-			/*PreparedStatement p= c.prepareStatement(sql);
-			p.setString(1, "101");
-			p.setString(2, "Soujan Poojari");
-			p.setString(3, "souj123");
-			p.setString(4, "soujansp5@gmail.com");
-			int row = p.executeUpdate();
+		}*/
+			PreparedStatement p1= c.prepareStatement(sql);
+			p1.setString(1, "101");
+			p1.setString(2, "Soujan Poojari");
+			p1.setString(3, "souj123");
+			p1.setString(4, "soujansp5@gmail.com");
+			int row = p1.executeUpdate();
 			if(row>0) {
 				System.out.println("New user Added");
 			}
@@ -44,14 +56,12 @@ public class CrudeDB {
 				
 				
 				
-		}*/
+		}
 		catch(SQLException e)
 		{
 			e.printStackTrace();
 		}
 			
-
-	}
 }
-
+}
 
