@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Example2_1 {
 
-	 static int p(int m, int n)
+	public static int p(int m, int n)
 	    {
 	        if (m == 1 || n == 1)
 	            return 1;
