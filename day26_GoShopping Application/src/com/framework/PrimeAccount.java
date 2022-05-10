@@ -2,6 +2,7 @@ package com.framework;
 
 public abstract class PrimeAccount extends ShopAccount {
 	private static boolean isPrime;
+	@SuppressWarnings("unused")
 	private static final float deliveryCharges=0.0f;
 	/**
 	 * @param isPrime
