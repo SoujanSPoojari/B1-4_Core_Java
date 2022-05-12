@@ -1,24 +1,24 @@
 package com.framework;
 
 public abstract class PrimeAccount extends ShopAccount {
-	private static boolean isPrime;
+	private boolean isPrime;
 	@SuppressWarnings("unused")
-	private static final float deliveryCharges=0.0f;
-	/**
-	 * @param isPrime
-	 */
-	public PrimeAccount(int accNo,String accNm,float charges,boolean isPrime) {
-		super(accNo,accNm,charges);
-		//this.isPrime = isPrime;
-		PrimeAccount.isPrime=isPrime;
+	static final private float deliveryCharges=0.0f;
+	public PrimeAccount(int accNo, String accNm, float charges,boolean isPrime) {
+		super(accNo, accNm, charges);
+        this.isPrime=isPrime;
 	}
-	public void bookProduct  (float Charges)
-	{
+	public void bookProduct(float charges) {
+		System.out.println("Account no is "+this.getAccNo()+"   Account name is   "+this.getAccNm()+ "  "+"charge is "+charges);
 		
 	}
 	@Override
 	public String toString() {
-		return String.format("PrimeAccount [isPrime=%s]", isPrime);
+		return String.format("PrimeAcc [isPrime=%s, toString()=%s]", isPrime,
+				super.toString());
 	}
 	
+	
+	
+
 }

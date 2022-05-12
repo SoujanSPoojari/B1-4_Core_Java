@@ -10,13 +10,16 @@ public abstract class SavingAcc extends BankAcc{
 		//this.isSalary = isSalary;
 		SavingAcc.isSalary=isSalary;
 	}
-	public void withdraw (float isSalary)
-	{
-		
+
+	public static boolean getisSalary() {
+		return isSalary;
 	}
-	@Override
-	public String toString() {
-		return String.format("SavingAcc [isSalary=%s]", isSalary);
+	public static float getMinbal() {
+		return MINBAL;
 	}
-		
+
+	public static String getcreditLimit() {
+		// TODO Auto-generated method stub
+		return null;
+	}		
 }

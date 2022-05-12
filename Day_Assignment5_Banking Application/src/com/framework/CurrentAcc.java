@@ -12,15 +12,15 @@ public abstract class CurrentAcc extends BankAcc {
 		CurrentAcc.creditLimit=creditLimit;
 		// TODO Auto-generated constructor stub
 	}
-	public void withdraw(float creditLimit)
-	{
-		
+
+	public static float getCreditLimit() {
+		return creditLimit;
 	}
 	@Override
 	public String toString() {
-		return String.format("CurrentAcc [creditLimit=%s]", creditLimit);
+		return "CurrentAcc[getcreditLimit()="+getCreditLimit()+"AccBal"+getAccBal()+",toString()="+super.toString()+"]";
 	}
-	
+
 	
 
 }
